@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="form-container">
+    <h2>📊 Model Feature Importance</h2>
+
+    <table class="analytics-table">
+        <tr>
+            <th>Feature</th>
+            <th>Importance Score</th>
+        </tr>
+
+        {% for key, value in importance.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ "%.4f"|format(value) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="auth-bg">
+
+<h1 class="main-title">Salary Prediction System</h1>
+
+<div class="auth-card">
+    <h2>Register</h2>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+        <p>Already have account? <a href="/login">Login</a></p>
+    </form>
+</div>
+
+</body>
+</html>

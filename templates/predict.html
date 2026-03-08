@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="form-container">
+    <h2>Salary Prediction</h2>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" name="age" placeholder="Enter Age" required>
+
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            {% for g in genders %}
+            <option value="{{ g }}">{{ g }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="education" required>
+            <option value="">Select Education</option>
+            {% for e in educations %}
+            <option value="{{ e }}">{{ e }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="job" required>
+            <option value="">Select Job Title</option>
+            {% for j in jobs %}
+            <option value="{{ j }}">{{ j }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="number" step="0.1" name="experience" placeholder="Years of Experience" required>
+
+        <button type="submit">Predict Salary</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h3>Predicted Salary: ₹ {{ prediction }}</h3>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

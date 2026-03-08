@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SalaryAI</title>
 
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Title -->
+    <h1 class="main-title">SalaryAI</h1>
+
+    <!-- Navbar -->
+    {% if session.get('user') %}
+    <nav class="navbar">
+        <a href="/dashboard">🏠 Dashboard</a>
+        <a href="/predict_page">💰 Predict</a>
+        <a href="/analytics">📊 Analytics</a>
+        <a href="/logout">🚪 Logout</a>
+    </nav>
+    {% endif %}
+
+    <!-- Page Content -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

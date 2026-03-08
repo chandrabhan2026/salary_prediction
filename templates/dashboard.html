@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h2>Welcome, {{ session['user'] }}</h2>
+
+    <div class="dashboard-buttons">
+
+        <!-- Predict Page (IMPORTANT FIX HERE) -->
+        <a href="/predict_page" class="btn">💰 Predict Salary</a>
+
+        <!-- Analytics Page (optional if created) -->
+        <a href="/analytics" class="btn">📊 Analytics</a>
+
+        <!-- Logout -->
+        <a href="/logout" class="btn logout">🚪 Logout</a>
+
+    </div>
+
+</div>
+
+{% endblock %}
